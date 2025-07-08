@@ -1,0 +1,35 @@
+{
+  "name": "hereisabreakdownofth-99961",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "cycle": "git add . ; git commit -m 'cycle' ; git push origin main",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv ./env.d.ts"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.0",
+    "next": "15.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.12",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vercel": "^44.2.12",
+    "wrangler": "^4.23.0"
+  },
+  "description": "Syllabus Planner is a frontend-only application designed to help students create a personalized study timetable based on their exam syllabus. The application will feature a clean, intuitive interface, using a minimalist design with pastel colors to create a calming and focused environment. All functionality, including the study plan generation, will be simulated entirely on the client-side, making the application feel responsive without any need for a backend.\n\nThe application's core function is to take the exam syllabus as input and generate a study plan that suggests how much time to dedicate to each topic per day. The syllabus will be inputted through a simple form where users can add topics and their respective study times or weights. The application will then use this information to create a mock study plan, distributing the total study time across the available days before the exam. The plan will be visually presented in a calendar format, showing the suggested study topics and times for each day.\n\nHere is a breakdown of the core features and components:\n*   **Pages:**\n  *   **Syllabus Input:** A page where users can input their exam syllabus, adding topics and their study times or weights.\n  *   **Study Plan:** A page that displays the generated study plan in a calendar format.\n*   **Core Components:**\n  *   **`SyllabusForm`:** A form where users can input their syllabus details, including topics and study times.\n  *   **`StudyPlanGenerator`:** A component that takes the syllabus input and generates a study plan, distributing study time across the available days.\n  *   **`CalendarView`:** A component that visually presents the study plan in a calendar format, showing the suggested study topics and times for each day.\n*   **Mock Data Structure:**\n  *   The syllabus will be represented as an array of topic objects: `[{ id: 1, name: 'Topic A', studyTime: 10 }, { id: 2, name: 'Topic B', studyTime: 15 }]`.\n  *   The study plan will be generated based on the syllabus data and the number of days before the exam, using a simple algorithm to distribute study time."
+}
